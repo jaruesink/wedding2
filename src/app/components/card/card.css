@@ -1,0 +1,18 @@
+.btn-floating{
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+
+.card{
+  opacity: 0;
+  z-index: 5;
+  transform: translate3d(0px, -20px, 0px);
+  transition: opacity .5s linear, transform .5s ease-out;
+}
+.card.active{
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+  transition: opacity .5s linear, transform .5s ease-in;
+}

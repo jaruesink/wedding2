@@ -1,0 +1,21 @@
+.continued{
+  display: block;
+  padding: 40px 0px;
+  text-align: center;
+  font-family: "Rochester", serif;
+  font-size: 24px;
+}
+
+p{
+  text-align: justify;
+}
+
+img{
+  max-width: 100%;
+}
+.right{
+  width: 40%;
+  min-width: 100px;
+  margin-left: 10px;
+  float:right;
+}

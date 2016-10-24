@@ -1,0 +1,17 @@
+<card>
+  <div class="card-content">
+    <span class="card-title">Coming</span>
+    <h5>About <b>{{count}}</b> will be at the wedding.</h5>
+    <h5>About <b>{{welcome_count}}</b> will be at the welcome party.</h5>
+    <p *ngFor="let person of coming">
+      <b>{{person.guest_name}}</b><span *ngIf="person.welcome">, will be at the welcome party and </span> 
+       wants us to save them <b>{{person.seats_saved}}</b> seats and wants us to play <b>{{person.song_request}}</b>.
+    </p>
+    <span class="card-title">Not Coming</span>
+      <ol>
+        <li *ngFor="let person of not_coming">
+          {{person.guest_name}}
+        </li>
+      </ol>
+  </div>
+</card>

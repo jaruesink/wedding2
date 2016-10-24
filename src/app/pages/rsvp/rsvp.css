@@ -1,0 +1,11 @@
+h5{font-family: Rochester, serif;}
+.row{margin-bottom: 0px;}
+.checkbox label{top: 0;}
+.checkbox label:nth-of-type(2){left:0;}
+textarea{margin-bottom: 0;}
+button{margin-top: 15px;}
+.row p{
+  margin: 30px 0 5px 15px;
+  font-size: 32px;
+  font-family: "Rochester", serif;
+}

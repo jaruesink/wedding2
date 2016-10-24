@@ -1,0 +1,60 @@
+<card>
+  <div *ngIf="!passcode_correct" class="card-content">
+    <h5>Please enter the passcode to RSVP.</h5>
+    <div class="input-field">
+      <input (keyup)="checkPasscode($event.target.value)" id="passcode" type="text">
+      <label for="passcode">Enter the passcode from the invitation:</label>
+    </div>
+  </div>
+  <div *ngIf="passcode_correct" class="card-content">
+    <span class="card-title">Let us know you're coming!</span>
+    <div class="row">
+    <form class="col s12" #rsvpform="ngForm" (ngSubmit)="formSubmit(rsvpform.value)">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="name" name="guest_name" [(ngModel)]="guest_name" type="text" required>
+          <label for="name">Your Name:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field checkbox col m12 l4">
+          <input type="checkbox" class="filled-in" name="check_yes" id="check-yes" checked="checked" [(ngModel)]="check_yes" (click)="checkboxClick(true)" />
+          <label for="check-yes">Yes, save me a seat!</label>
+        </div>
+        <div class="input-field checkbox col m12 l8">
+          <input type="checkbox" class="filled-in" name="check_no" id="check-no" checked="checked" [(ngModel)]="check_no" (click)="checkboxClick(false)" />
+          <label for="check-no">Can't make it, but I have a good excuse.</label>
+        </div>
+      </div>
+      <div *ngIf="check_yes">
+      <div class="row">
+        <p>How many seats should we save?</p>
+        <div class="input-field col s12">
+          <input id="number" name="seats_saved" min=1 [(ngModel)]="seats_saved" type="number">
+          <label for="number">Number of Seats including yourself:</label>
+        </div>
+      </div>
+      <div class="row">
+        <p>Will you be coming to the Welcome Party?</p>
+        <div class="input-field checkbox col m12 l4">
+          <input type="checkbox" class="filled-in" name="welcome_yes" id="welcome-yes" checked="checked" [(ngModel)]="welcome_yes" (click)="welcomeClick(true)" />
+          <label for="welcome-yes">Yes, I will be there!</label>
+        </div>
+        <div class="input-field checkbox col m12 l8">
+          <input type="checkbox" class="filled-in" name="welcome_no" id="welcome-no" checked="checked" [(ngModel)]="welcome_no" (click)="welcomeClick(false)" />
+          <label for="welcome-no">Nope, I'll just see you on Sunday.</label>
+        </div>
+      </div>
+      <div class="row">
+        <p>I promise to dance if this song is played: </p>
+        <div class="input-field col s12">
+          <input id="song" name="song_request" [(ngModel)]="song_request" type="text">
+          <label for="song">Song Title and Artist:</label>
+        </div>
+      </div>
+      </div>
+      <button class="btn-large waves-effect waves-light" type="submit">Send</button>
+    </form>
+    </div>
+  </div>
+</card>
