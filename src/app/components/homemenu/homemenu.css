@@ -37,6 +37,11 @@ ul li{
   margin-top:10px;
 }
 
+a{
+  width: 222px;
+  text-align: left;
+}
+
 a.disabled {
   pointer-events: none;
 }
