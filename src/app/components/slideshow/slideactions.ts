@@ -27,7 +27,7 @@ export class SlideActions implements OnDestroy {
   today: Date = new Date();
   dayOf: Date = new Date(2017,0,15);
   diff: number = this.dayOf.getTime()-this.today.getTime();
-  daysRemaining: number = Math.floor(this.diff/(1000*60*60*24));
+  daysRemaining: number = Math.floor(this.diff/(1000*60*60*24))+1;
   isPast: boolean = (this.today.getTime() > this.dayOf.getTime());
   shortmessage: string;
   longmessage: string;
