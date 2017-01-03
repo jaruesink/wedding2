@@ -38,6 +38,11 @@ ul li{
   width: 222px;
 }
 
+a{
+  width: 222px;
+  text-align: left;
+}
+
 a.disabled {
   pointer-events: none;
 }
